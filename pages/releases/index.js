@@ -1,7 +1,9 @@
+import { TitlePage } from "@/components/common/TitlePage";
+
 export default function Releases() {
   return (
-    <div className="h-[120vh]">
-      <h1>releases</h1>
+    <div className="py-32 px-10">
+      <TitlePage text={"releases"}></TitlePage>
     </div>
   );
 }

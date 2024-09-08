@@ -70,8 +70,6 @@ export default function About() {
     </motion.div>
   );
 
-  const [hoverLinkAnimation, setHoverLinkAnimation] = useState(false);
-
   return (
     <div className="py-24 px-10 grid grid-cols-[1fr_2fr_1.5fr] gap-4">
       <motion.div
