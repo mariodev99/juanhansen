@@ -14,20 +14,61 @@ export default function ReleasesPage() {
         setCurrentRelease={setCurrentRelease}
         setHoverAnimation={setHoverAnimation}
       />
-      <AnimatePresence>
-        <div className="fixed border top-1/3 left-1/2 w-1 h-1 flex justify-center items-start">
-          {hoverAnimation && (
-            <motion.h1
-              className="text-9xl uppercase text-center font-black"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+      <motion.div className="fixed top-1/3 left-1/2 w-1 h-1 flex justify-center items-start pointer-events-none">
+        <AnimatePresence mode="wait">
+          {hoverAnimation && currentRelease && (
+            <motion.div
+              key={currentRelease.name}
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -100 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
             >
-              {currentRelease?.name}
-            </motion.h1>
+              <motion.h2
+                className="text-9xl uppercase text-center font-black"
+                style={{ pointerEvents: "none" }}
+              >
+                {currentRelease.name.split(" ").map((word, wordIndex) => (
+                  <div
+                    key={wordIndex}
+                    className="flex gap-2 justify-center overflow-hidden"
+                  >
+                    {word.split("").map((letter, index) => (
+                      <motion.span
+                        key={index}
+                        initial={{ y: 100, rotateX: -90 }}
+                        animate={{ y: 0, rotateX: 0 }}
+                        exit={{ y: -100, rotateX: 90 }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 0.5,
+                          delay: index * 0.02,
+                        }}
+                      >
+                        {letter}
+                      </motion.span>
+                    ))}
+                  </div>
+                ))}
+              </motion.h2>
+              <motion.div className="overflow-hidden text-center">
+                <motion.p
+                  initial={{ y: 100, rotateX: -90 }}
+                  animate={{ y: 0, rotateX: 0 }}
+                  exit={{ y: -100, rotateX: 90 }}
+                  transition={{
+                    ease: "easeInOut",
+                    duration: 0.5,
+                    delay: 0.04,
+                  }}
+                >
+                  {currentRelease.description}
+                </motion.p>
+              </motion.div>
+            </motion.div>
           )}
-        </div>
-      </AnimatePresence>
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 }

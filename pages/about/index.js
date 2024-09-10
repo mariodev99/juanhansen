@@ -79,7 +79,7 @@ export default function About() {
   );
 
   return (
-    <div className="py-24 px-10 grid grid-cols-[1fr_2fr_1.5fr] gap-4">
+    <div className="py-24 px-10 grid grid-cols-[1fr_2fr_1.5fr] gap-4 ">
       {/* imagen */}
       <motion.div
         className="overflow-hidden w-2/3"

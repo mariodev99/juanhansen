@@ -1,13 +1,10 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import juanhansen from "../public/images/juanhansen.jpg";
 import title from "../public/images/juanhansen_title.png";
 import { motion } from "framer-motion";
 import { LogoIcon } from "@/components/icons/Logo";
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const textHome = "DJ";
   const DELAY_TITLE_ANIMATION = 3.5;
 
   const LetterAnimation = ({ word }) => (
@@ -36,10 +33,10 @@ export default function Home() {
 
   return (
     <main
-      className={`flex min-h-screen ${inter.className} relative items-center justify-center overflow-x-hidden`}
+      className={`flex min-h-screen  relative items-center justify-center overflow-x-hidden`}
     >
       <motion.div
-        className="absolute inset-0 z-[-1]"
+        className="absolute inset-0 z-[-1] brightness-75"
         initial={{ scale: 1 }}
         animate={{ scale: 1.2 }}
         transition={{ delay: 2.2, duration: 0.8, ease: "easeInOut" }}

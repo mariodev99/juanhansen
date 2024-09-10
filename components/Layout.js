@@ -3,10 +3,10 @@ import Nav from "./Nav";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Layout({ children }) {
-  const LOADINGBAR_ANIMATION_TIME = 3000;
-
   const LoadingBar = () => (
     <motion.div
       className="absolute top-0 h-1 bg-slate-200 z-50"
@@ -28,7 +28,7 @@ export default function Layout({ children }) {
   }, []);
 
   return (
-    <div className="h-screen w-screen overflow-y-scroll">
+    <div className={`${inter.className} h-screen w-screen overflow-y-scroll`}>
       <motion.div
         className="w-screen h-screen bg-[#131313] absolute z-40"
         animate={{

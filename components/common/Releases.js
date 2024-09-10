@@ -14,23 +14,21 @@ export const Releases = ({ setCurrentRelease, setHoverAnimation }) => {
     {
       name: "falling down",
       description:
-        "Latest EP on Watergate Records alongside 8 Kays. With remixes from Colyn & Chris Avantgarde.",
+        "Latest EP on Watergate Records alongside 8Kays. With remixes from Colyn & Chris Avantgarde.",
       imageSrc: fallingdownImage,
       itemClassname: "relative h-[370px] w-[450px]",
       containerClassname: "justify-start pl-20",
     },
     {
-      name: "innelea",
-      description:
-        "Latest EP on Watergate Records alongside 8 Kays. With remixes from Colyn & Chris Avantgarde.",
+      name: "Burning Out",
+      description: "New single in collaboration with Innellea is out now.",
       imageSrc: innelea,
       itemClassname: "relative h-[550px] w-[350px]",
       containerClassname: "justify-end pr-20",
     },
     {
-      name: "beirut set",
-      description:
-        "Latest EP on Watergate Records alongside 8 Kays. With remixes from Colyn & Chris Avantgarde.",
+      name: "beirut set ",
+      description: "Full Live set recording at AHM club in Beirut, Lebanon",
       imageSrc: beirut,
       itemClassname: "relative h-[600px] w-96",
       containerClassname: "justify-start pl-20 mt-24",
@@ -50,7 +48,7 @@ export const Releases = ({ setCurrentRelease, setHoverAnimation }) => {
         >
           <motion.div
             className={release.itemClassname}
-            style={{}}
+            style={{ cursor: "pointer" }}
             initial={{ y: 150 }}
             animate={{ y: 0 }}
             transition={{
