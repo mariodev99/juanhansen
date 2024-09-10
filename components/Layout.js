@@ -30,7 +30,7 @@ export default function Layout({ children }) {
   return (
     <div className="h-screen w-screen overflow-y-scroll">
       <motion.div
-        className="w-screen h-screen bg-[#1A1A1A] absolute z-40"
+        className="w-screen h-screen bg-[#131313] absolute z-40"
         animate={{
           height: 0,
         }}

@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function About() {
+  // Valor utilizado para que haya un delay despues de la animacion "loading"
+  const CONTENT_PAGE_DELAY_ANIMATION = 0;
+
   const aboutPrimaryLines = [
     "Juan Hansen is a trailblazer in the electronic ",
     "music scene, renowned for his innovative ",
@@ -37,21 +40,24 @@ export default function About() {
 
   const containerVariants = {
     hidden: { opacity: 1 },
-    visible: (custom) => ({
+    visible: {
       transition: {
-        staggerChildren: 0.05,
-        delay: custom,
+        staggerChildren: 0.1,
       },
-    }),
+    },
   };
 
   const lineVariants = {
     hidden: { y: 30, rotateX: 40 },
-    visible: {
+    visible: (custom) => ({
       y: 0,
       rotateX: 0,
-      transition: { duration: 0.8, ease: "easeInOut" },
-    },
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut",
+        delay: CONTENT_PAGE_DELAY_ANIMATION + custom * 0.06,
+      },
+    }),
   };
 
   const TextWithAnimation = ({ textLines, customDelay }) => (
@@ -64,7 +70,9 @@ export default function About() {
     >
       {textLines.map((line, index) => (
         <div className="overflow-hidden" key={index}>
-          <motion.p variants={lineVariants}>{line}</motion.p>
+          <motion.p variants={lineVariants} custom={index}>
+            {line}
+          </motion.p>
         </div>
       ))}
     </motion.div>
@@ -72,6 +80,7 @@ export default function About() {
 
   return (
     <div className="py-24 px-10 grid grid-cols-[1fr_2fr_1.5fr] gap-4">
+      {/* imagen */}
       <motion.div
         className="overflow-hidden w-2/3"
         initial={{ height: 0 }}
