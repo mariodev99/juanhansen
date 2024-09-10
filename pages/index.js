@@ -48,7 +48,7 @@ export default function Home() {
           alt="juan hansen"
         />
       </motion.div>
-      <div className="">
+      <div className="px-10">
         <motion.div
           className="relative"
           initial={{ rotateX: -25 }}
@@ -59,9 +59,9 @@ export default function Home() {
             ease: "easeInOut",
           }}
         >
-          <LogoIcon />
+          <LogoIcon className={"w-full h-16 md:w-auto md:h-auto"} />
         </motion.div>
-        <div className="flex justify-end mr-10 uppercase gap-20 text-xs">
+        <div className="flex justify-end uppercase gap-20 text-xs">
           <div>
             <div className="overflow-hidden flex gap-[0.9]">
               <LetterAnimation word={"DJ"} />

@@ -91,7 +91,7 @@ export default function Nav() {
             </div>
 
             <motion.div
-              className="mt-10 pr-36 uppercase font-medium text-xs"
+              className="mt-10 pr-10 md:pr-28 uppercase font-medium text-xs"
               variants={menuItemVariant}
               initial="hidden"
               animate="visible"
@@ -168,9 +168,9 @@ export default function Nav() {
                 </motion.div>
               </div>
 
-              <div className="mt-10">
+              {/* <div className="mt-10">
                 <p>buenos aires, argentina</p>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </motion.div>
