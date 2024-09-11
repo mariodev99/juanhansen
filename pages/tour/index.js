@@ -69,6 +69,7 @@ export default function TourPage() {
       <div className="mt-10 w-full lg:w-4/5">
         {dates.map((item, index) => (
           <motion.div
+            key={index}
             className="grid grid-cols-1 md:grid-cols-4 py-8 uppercase font-regular text-sm md:text-xl items-center border-t-2 border-[#272727] "
             initial={{
               opacity: 0,
