@@ -34,6 +34,7 @@ export default function Home() {
   return (
     <main
       className={`flex min-h-screen  relative items-center justify-center overflow-x-hidden`}
+      data-scroll-section
     >
       <motion.div
         className="absolute inset-0 z-[-1] brightness-75"

@@ -5,6 +5,8 @@ import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { useRef } from "react";
 
 export default function Layout({ children }) {
   const LoadingBar = () => (
@@ -21,6 +23,8 @@ export default function Layout({ children }) {
     ></motion.div>
   );
 
+  const containerRef = useRef(null);
+
   const [loadingComplete, setLoadingComplete] = useState(false); // Controla si la carga ha terminado
 
   useEffect(() => {
@@ -28,21 +32,36 @@ export default function Layout({ children }) {
   }, []);
 
   return (
-    <div className={`${inter.className} h-screen w-screen overflow-y-scroll`}>
-      <motion.div
-        className="w-screen h-screen bg-[#131313] absolute z-40"
-        animate={{
-          height: 0,
-        }}
-        transition={{
-          ease: "easeInOut",
-          duration: 1.2,
-          delay: 3, //2
-        }}
-      />
-      <AnimatePresence>{!loadingComplete && <LoadingBar />}</AnimatePresence>
-      <Nav></Nav>
-      {children}
-    </div>
+    <LocomotiveScrollProvider
+      options={{
+        smooth: true,
+        lerp: 0.05,
+        inertia: 0.9,
+      }}
+      watch={[]}
+      containerRef={containerRef}
+    >
+      {/* ERRORLOCOMOTIVE: SI SACO EL H-SCREEN FUNCIONA, SI LO DEJO NO (DIV DE ABAJO)*/}
+      <div
+        className={`${inter.className} w-screen overflow-y-scroll`}
+        data-scroll-container
+        ref={containerRef}
+      >
+        <motion.div
+          className="w-screen h-screen bg-[#131313] absolute z-40"
+          animate={{
+            height: 0,
+          }}
+          transition={{
+            ease: "easeInOut",
+            duration: 1.2,
+            delay: 3, //2
+          }}
+        />
+        <AnimatePresence>{!loadingComplete && <LoadingBar />}</AnimatePresence>
+        <Nav></Nav>
+        {children}
+      </div>
+    </LocomotiveScrollProvider>
   );
 }

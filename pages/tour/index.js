@@ -64,7 +64,7 @@ export default function TourPage() {
   ];
 
   return (
-    <div className="py-32 px-10">
+    <div className="py-32 px-10" data-scroll-section>
       <TitlePage text={"tour"}></TitlePage>
       <div className="mt-10 w-full lg:w-4/5">
         {dates.map((item, index) => (

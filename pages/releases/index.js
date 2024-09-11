@@ -1,14 +1,15 @@
 import { Releases } from "@/components/common/Releases";
 import { TitlePage } from "@/components/common/TitlePage";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 export default function ReleasesPage() {
   const [currentRelease, setCurrentRelease] = useState(null);
   const [hoverAnimation, setHoverAnimation] = useState(false);
 
   return (
-    <div className="py-32 px-10">
+    <div className="py-32 px-10 " data-scroll-section>
       <TitlePage text={"releases"}></TitlePage>
       <Releases
         setCurrentRelease={setCurrentRelease}

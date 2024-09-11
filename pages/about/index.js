@@ -88,7 +88,10 @@ export default function About() {
   );
 
   return (
-    <div className="py-24 px-10 grid grid-cols-1 md:grid-cols-[1fr_2fr_1.5fr] gap-4 ">
+    <div
+      className="py-24 px-10 grid grid-cols-1 md:grid-cols-[1fr_2fr_1.5fr] gap-4 "
+      data-scroll-section
+    >
       {/* imagen */}
       <motion.div
         className="overflow-hidden w-full md:w-2/3"
