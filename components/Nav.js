@@ -58,7 +58,10 @@ export default function Nav() {
           transition={{ duration: 0.8 }}
         >
           <div className="pl-20 pr-10">
-            <div className="flex justify-end overflow-hidden">
+            <div className="flex justify-between overflow-hidden">
+              <Link href={"/"} onClick={(e) => handleClick(e, "/")}>
+                <LogoIcon height={"40px"} width={"100px"} />
+              </Link>
               <motion.button
                 initial={{ y: 30 }}
                 animate={{ y: 0 }}
@@ -71,11 +74,7 @@ export default function Nav() {
               </motion.button>
             </div>
 
-            <Link href={"/"} onClick={(e) => handleClick(e, "/")}>
-              <LogoIcon height={"70px"} width={"200px"} />
-            </Link>
-
-            <div className="mt-20 flex flex-col">
+            <div className="mt-14 flex flex-col">
               <Link href={"/about"} onClick={(e) => handleClick(e, "/about")}>
                 <HoverLink text={"ABOUT"} />
               </Link>

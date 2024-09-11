@@ -14,7 +14,9 @@ export default function ReleasesPage() {
         setCurrentRelease={setCurrentRelease}
         setHoverAnimation={setHoverAnimation}
       />
-      <motion.div className="fixed top-1/3 left-1/2 w-1 h-1 flex justify-center items-start pointer-events-none">
+
+      {/* Titulo y descripcion con su animacion, solo en Desktop */}
+      <motion.div className="hidden md:flex fixed top-1/3 left-1/2 w-1 h-1 justify-center items-start pointer-events-none">
         <AnimatePresence mode="wait">
           {hoverAnimation && currentRelease && (
             <motion.div
@@ -25,7 +27,7 @@ export default function ReleasesPage() {
               transition={{ duration: 0.6, ease: "easeInOut" }}
             >
               <motion.h2
-                className="text-9xl uppercase text-center font-black"
+                className="text-5xl md:text-9xl uppercase text-center font-black"
                 style={{ pointerEvents: "none" }}
               >
                 {currentRelease.name.split(" ").map((word, wordIndex) => (
