@@ -10,6 +10,7 @@ export default function TourPage() {
     {
       day: 11,
       month: "jun",
+      year: 2024,
       place: "metropolitano rosario",
       city: "rosario",
       country: "arg",
@@ -18,22 +19,7 @@ export default function TourPage() {
     {
       day: 15,
       month: "jun",
-      place: "SAINTWHOO M&A FESTIVAL",
-      city: "rosario",
-      country: "arg",
-      ticket_link: "/",
-    },
-    {
-      day: 15,
-      month: "jun",
-      place: "SAINTWHOO M&A FESTIVAL",
-      city: "rosario",
-      country: "arg",
-      ticket_link: "/",
-    },
-    {
-      day: 15,
-      month: "jun",
+      year: 2024,
       place: "SAINTWHOO M&A FESTIVAL",
       city: "rosario",
       country: "arg",
@@ -42,6 +28,7 @@ export default function TourPage() {
     {
       day: 11,
       month: "jun",
+      year: 2024,
       place: "metropolitano rosario",
       city: "rosario",
       country: "arg",
@@ -50,6 +37,25 @@ export default function TourPage() {
     {
       day: 11,
       month: "jun",
+      year: 2024,
+      place: "metropolitano rosario",
+      city: "rosario",
+      country: "arg",
+      ticket_link: "/",
+    },
+    {
+      day: 11,
+      month: "jun",
+      year: 2024,
+      place: "metropolitano rosario",
+      city: "rosario",
+      country: "arg",
+      ticket_link: "/",
+    },
+    {
+      day: 11,
+      month: "jun",
+      year: 2024,
       place: "metropolitano rosario",
       city: "rosario",
       country: "arg",
@@ -60,27 +66,10 @@ export default function TourPage() {
   return (
     <div className="py-32 px-10">
       <TitlePage text={"tour"}></TitlePage>
-      <div className="mt-10">
-        <motion.div
-          className=" grid grid-cols-6 uppercase text-xs text-[#888]"
-          initial={{
-            opacity: 0,
-          }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-            delay: CONTENT_PAGE_DELAY_ANIMATION,
-          }}
-        >
-          <div>date</div>
-          <div>place</div>
-          <div>city</div>
-          <div>country</div>
-        </motion.div>
+      <div className="mt-10 w-full lg:w-4/5">
         {dates.map((item, index) => (
           <motion.div
-            className="mt-5 grid grid-cols-6 uppercase font-medium text-xl"
+            className="grid grid-cols-1 md:grid-cols-4 py-8 uppercase font-regular text-sm md:text-xl items-center border-t-2 border-[#272727] "
             initial={{
               opacity: 0,
               y: 30,
@@ -92,15 +81,18 @@ export default function TourPage() {
               delay: CONTENT_PAGE_DELAY_ANIMATION + index * 0.1,
             }}
           >
-            <div className="flex gap-4">
-              <p>{item.day}</p> <p>{item.month}</p>
-            </div>
-            <div>{item.place}</div>
-            <div>{item.city}</div>
-            <div>{item.country}</div>
             <div className="">
+              <p>
+                {item.day} {item.month} {item.year}
+              </p>
+            </div>
+            <div className="font-medium my-2">
+              {item.city} ({item.country})
+            </div>
+            <div className="">{item.place}</div>
+            <div className="pl-0 md:l-6 mt-2 flex w-full md:w-auto justify-center md:justify-end">
               <Link
-                className="bg-white text-black px-4 py-2 font-semibold"
+                className="flex justify-center w-full md:w-auto border border-[#666] text-white px-8 py-4 hover:bg-white hover:text-black hover:border-transparent"
                 href={item.ticket_link}
                 target="_blank"
               >
