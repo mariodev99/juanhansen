@@ -7,6 +7,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRef } from "react";
+import { LoadProvider, useLoad } from "./context/LoadContext";
 
 export default function Layout({ children }) {
   const LoadingBar = () => (
@@ -24,11 +25,10 @@ export default function Layout({ children }) {
   );
 
   const containerRef = useRef(null);
-
-  const [loadingComplete, setLoadingComplete] = useState(false); // Controla si la carga ha terminado
+  const { isLoadFinish, setLoadFinish } = useLoad();
 
   useEffect(() => {
-    setTimeout(() => setLoadingComplete(true), 3000); // Espera 1 segundo tras completar la carga antes de ocultar la barra
+    setTimeout(() => setLoadFinish(true), 3000);
   }, []);
 
   return (
@@ -62,7 +62,7 @@ export default function Layout({ children }) {
         />
 
         {/* BARRA DE CARGA */}
-        <AnimatePresence>{!loadingComplete && <LoadingBar />}</AnimatePresence>
+        <AnimatePresence>{!isLoadFinish && <LoadingBar />}</AnimatePresence>
         <Nav></Nav>
         {children}
       </div>

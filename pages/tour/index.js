@@ -1,64 +1,56 @@
 import Link from "next/link";
 import { TitlePage } from "@/components/common/TitlePage";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useLoad } from "@/components/context/LoadContext";
 
 export default function TourPage() {
-  // Valor utilizado para que haya un delay despues de la animacion "loading"
-  const CONTENT_PAGE_DELAY_ANIMATION = 0;
+  const { isLoadFinish } = useLoad();
 
   const dates = [
     {
-      day: 11,
-      month: "jun",
+      day: 23,
+      month: "aug",
       year: 2024,
-      place: "metropolitano rosario",
-      city: "rosario",
-      country: "arg",
+      place: "Set Underground",
+      city: "San Francisco, CA",
+      country: "us",
       ticket_link: "/",
     },
     {
-      day: 15,
-      month: "jun",
+      day: 24,
+      month: "aug",
       year: 2024,
-      place: "SAINTWHOO M&A FESTIVAL",
-      city: "rosario",
-      country: "arg",
+      place: "Set Underground",
+      city: "Los Angeles, CA",
+      country: "us",
       ticket_link: "/",
     },
     {
-      day: 11,
-      month: "jun",
+      day: 7,
+      month: "sept",
       year: 2024,
-      place: "metropolitano rosario",
-      city: "rosario",
-      country: "arg",
+      place: "Hilaria",
+      city: "Huechuraba,",
+      country: "chi",
       ticket_link: "/",
     },
     {
-      day: 11,
-      month: "jun",
+      day: 14,
+      month: "sept",
       year: 2024,
-      place: "metropolitano rosario",
-      city: "rosario",
-      country: "arg",
+      place: "The Hall Miami",
+      city: "Miami, flo",
+      country: "US",
       ticket_link: "/",
     },
     {
-      day: 11,
-      month: "jun",
+      day: 25,
+      month: "OCT",
       year: 2024,
-      place: "metropolitano rosario",
-      city: "rosario",
-      country: "arg",
-      ticket_link: "/",
-    },
-    {
-      day: 11,
-      month: "jun",
-      year: 2024,
-      place: "metropolitano rosario",
-      city: "rosario",
-      country: "arg",
+      place: "Le Cirque Rouge",
+      city: "Marrakesh",
+      country: "ma",
       ticket_link: "/",
     },
   ];
@@ -79,7 +71,7 @@ export default function TourPage() {
             transition={{
               duration: 0.8,
               ease: "easeInOut",
-              delay: CONTENT_PAGE_DELAY_ANIMATION + index * 0.1,
+              delay: (isLoadFinish ? 0 : 3) + index * 0.1,
             }}
           >
             <div className="">

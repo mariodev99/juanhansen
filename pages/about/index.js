@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import hansen from ".././../public/images/juanhansen_about.jpg";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLoad } from "@/components/context/LoadContext";
 
 export default function About() {
-  // Valor utilizado para que haya un delay despues de la animacion "loading"
-  const CONTENT_PAGE_DELAY_ANIMATION = 0;
+  const { isLoadFinish } = useLoad();
 
   const aboutPrimaryLines = [
     "Juan Hansen is a trailblazer in the electronic ",
@@ -55,7 +55,7 @@ export default function About() {
       transition: {
         duration: 0.8,
         ease: "easeInOut",
-        delay: CONTENT_PAGE_DELAY_ANIMATION + custom * 0.06,
+        delay: (isLoadFinish ? 0 : 3) + custom * 0.06,
       },
     }),
   };
