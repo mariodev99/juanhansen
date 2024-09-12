@@ -9,18 +9,34 @@ export default function ReleasesPage() {
   const [hoverAnimation, setHoverAnimation] = useState(false);
 
   return (
-    <div className="py-32 px-10 " data-scroll-section>
+    <div className="py-32 px-10 " data-scroll-section id="scroll-content">
       <TitlePage text={"releases"}></TitlePage>
       <Releases
         setCurrentRelease={setCurrentRelease}
         setHoverAnimation={setHoverAnimation}
       />
 
-      {/* Titulo y descripcion con su animacion, solo en Desktop */}
-      <motion.div className="hidden md:flex fixed top-1/3 left-1/2 w-1 h-1 justify-center items-start pointer-events-none">
+      {/* 
+      Locomotive-scroll utiliza -transform- para trabajar y no el scroll normal utilizado.
+      Trae PROBLEMAS al querer fijar un contenedor con -position: fixed-
+      SOLUCION:
+      Se utiliza: 
+        data-scroll - 
+        data-scroll-sticky - Fija el contenedor
+        data-scroll-target="#scroll-content" - Se utiliza en el padre
+        class: sticky-container con -positon: fixed- y otras propiedades para tener el texto centrado
+      */}
+
+      <div
+        class="sticky-container"
+        data-scroll
+        data-scroll-sticky
+        data-scroll-target="#scroll-content"
+      >
         <AnimatePresence mode="wait">
           {hoverAnimation && currentRelease && (
             <motion.div
+              className=""
               key={currentRelease.name}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
@@ -71,7 +87,7 @@ export default function ReleasesPage() {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </div>
   );
 }

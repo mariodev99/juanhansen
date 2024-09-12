@@ -48,6 +48,7 @@ export default function Layout({ children }) {
         data-scroll-container
         ref={containerRef}
       >
+        {/* CONTENEDOR DE CARGA */}
         <motion.div
           className="w-screen h-screen bg-[#131313] absolute z-40"
           animate={{
@@ -59,6 +60,8 @@ export default function Layout({ children }) {
             delay: 3, //2
           }}
         />
+
+        {/* BARRA DE CARGA */}
         <AnimatePresence>{!loadingComplete && <LoadingBar />}</AnimatePresence>
         <Nav></Nav>
         {children}

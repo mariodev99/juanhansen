@@ -1,6 +1,5 @@
 import Image from "next/image";
 import juanhansen from "../public/images/juanhansen.jpg";
-import title from "../public/images/juanhansen_title.png";
 import { motion } from "framer-motion";
 import { LogoIcon } from "@/components/icons/Logo";
 
