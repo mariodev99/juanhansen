@@ -3,11 +3,10 @@ import Nav from "./Nav";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRef } from "react";
-import { LoadProvider, useLoad } from "./context/LoadContext";
+import { useLoad } from "./context/LoadContext";
+import { useRouter } from "next/router";
 
 export default function Layout({ children }) {
   const LoadingBar = () => (
@@ -24,6 +23,7 @@ export default function Layout({ children }) {
     ></motion.div>
   );
 
+  const { asPath } = useRouter(); // With next/router
   const containerRef = useRef(null);
   const { isLoadFinish, setLoadFinish } = useLoad();
 
@@ -37,18 +37,16 @@ export default function Layout({ children }) {
         smooth: true,
         smoothMobile: true,
         lerp: 0.05,
-        inertia: 0.9,
+        inertia: 0.4,
       }}
       watch={[]}
+      location={asPath}
       containerRef={containerRef}
+      onLocationChange={(scroll) =>
+        scroll.scrollTo(0, { duration: 0, disableLerp: true })
+      }
     >
-      {/* ERRORLOCOMOTIVE: SI SACO EL H-SCREEN FUNCIONA*/}
-      <div
-        className={`${inter.className} w-screen overflow-y-scroll`}
-        data-scroll-container
-        ref={containerRef}
-      >
-        {/* CONTENEDOR DE CARGA */}
+      <div data-scroll-container ref={containerRef}>
         <motion.div
           className="w-screen h-screen bg-[#131313] absolute z-40"
           animate={{
@@ -60,11 +58,11 @@ export default function Layout({ children }) {
             delay: 3, //2
           }}
         />
-
-        {/* BARRA DE CARGA */}
         <AnimatePresence>{!isLoadFinish && <LoadingBar />}</AnimatePresence>
         <Nav></Nav>
         {children}
+
+        {/* <Footer /> */}
       </div>
     </LocomotiveScrollProvider>
   );
