@@ -3,9 +3,12 @@ import juanhansen from "../public/images/juanhansen.jpg";
 import { AnimatePresence, motion } from "framer-motion";
 import { LogoIcon } from "@/components/icons/Logo";
 import { useLoad } from "@/components/context/LoadContext";
+import {
+  MouseParallaxChild,
+  MouseParallaxContainer,
+} from "react-parallax-mouse";
 
 export default function Home() {
-  const DELAY_TITLE_ANIMATION = 3.5;
   const { isLoadFinish } = useLoad();
 
   const LetterAnimation = ({ word }) => (
@@ -34,15 +37,15 @@ export default function Home() {
   );
 
   return (
-    <main
-      className={`flex min-h-screen relative items-center justify-center overflow-x-hidden`}
-      data-scroll-section
-    >
-      <AnimatePresence>
+    <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1}>
+      <main
+        className={`flex h-screen relative items-center justify-center overflow-x-hidden`}
+        data-scroll-section
+      >
         <motion.div
-          className="absolute inset-0 z-[-1] brightness-75"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.2 }}
+          className="absolute inset-0 z-[-1] brightness-50"
+          initial={{ scale: 1, opacity: 0 }}
+          animate={{ scale: 1.2, opacity: 1 }}
           transition={{
             delay: isLoadFinish ? 0 : 3.2,
             duration: 0.8,
@@ -56,38 +59,41 @@ export default function Home() {
             alt="juan hansen"
           />
         </motion.div>
-      </AnimatePresence>
 
-      <div className="px-10">
-        <motion.div
-          className="relative"
-          initial={{ scale: 0.7 }}
-          animate={{ scale: 1 }}
-          transition={{
-            delay: isLoadFinish ? 0 : 2.9,
-            duration: 1.2,
-            ease: "easeInOut",
-          }}
-        >
-          <LogoIcon className={"w-full h-16 md:w-auto md:h-auto"} />
-        </motion.div>
-        <div className="flex justify-end uppercase gap-20 text-xs mt-2">
-          <div>
-            <div className="overflow-hidden flex gap-[0.9]">
-              <LetterAnimation word={"DJ"} />
+        <div className="px-10">
+          <motion.div
+            className="relative"
+            initial={{ scale: 0.7 }}
+            animate={{ scale: 1 }}
+            transition={{
+              delay: isLoadFinish ? 0 : 2.9,
+              duration: 1.2,
+              ease: "easeInOut",
+            }}
+          >
+            <MouseParallaxChild factorX={0.3} factorY={0.5}>
+              <LogoIcon className={"w-full h-16 md:w-auto md:h-auto"} />
+            </MouseParallaxChild>
+          </motion.div>
+
+          <div className="flex justify-end uppercase gap-20 text-xs mt-2">
+            <div>
+              <div className="overflow-hidden flex gap-[0.9]">
+                <LetterAnimation word={"DJ"} />
+              </div>
+              <div className="overflow-hidden flex gap-[0.9]">
+                <LetterAnimation word={"Producer"} />
+              </div>
             </div>
-            <div className="overflow-hidden flex gap-[0.9]">
-              <LetterAnimation word={"Producer"} />
+            <div>
+              <div className="overflow-hidden flex gap-[0.9]">
+                <LetterAnimation word={"Buenos Aires"} />
+              </div>
+              <LetterAnimation word={"Argentina"} />
             </div>
-          </div>
-          <div>
-            <div className="overflow-hidden flex gap-[0.9]">
-              <LetterAnimation word={"Buenos Aires"} />
-            </div>
-            <LetterAnimation word={"Argentina"} />
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </MouseParallaxContainer>
   );
 }

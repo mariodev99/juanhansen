@@ -42,7 +42,7 @@ export default function Layout({ children }) {
       watch={[]}
       containerRef={containerRef}
     >
-      {/* ERRORLOCOMOTIVE: SI SACO EL H-SCREEN FUNCIONA, SI LO DEJO NO (DIV DE ABAJO)*/}
+      {/* ERRORLOCOMOTIVE: SI SACO EL H-SCREEN FUNCIONA*/}
       <div
         className={`${inter.className} w-screen overflow-y-scroll`}
         data-scroll-container
