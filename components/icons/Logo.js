@@ -19,3 +19,112 @@ export const LogoIcon = (props) => (
     />
   </svg>
 );
+
+export const BeatportIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="white"
+    {...props}
+  >
+    <circle cx="13.5" cy="15.5" r="4" strokeWidth="1.5" />
+    <path
+      d="M11 5V9.72679C11 10.2243 10.8146 10.704 10.4799 11.0721L6 16"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+export const SoundcloudIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M9 8V17M6 17V10M3 16V14M17 11H18C19.38 11 21 12.274 21 14C21 15.657 19.5 17 18 17H12V7C15 7 16.5 8.5 17 11Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const AppleIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M9 6.99998C6 6.99998 5 9.99998 5 12.5C5 15.5 7 20 9 20C10.088 19.954 10.679 19.5 12 19.5C13.312 19.5 13.5 20 15 20C16.5 20 19 17 19 15C18.972 14.99 16.528 14.597 16.5 12C16.481 9.82998 18.916 9.04598 19 8.99998C17.977 7.50798 16.049 7.03698 15.5 6.99998C14.067 6.88898 12.67 7.99998 12 7.99998C11.32 7.99998 10.1 6.99998 9 6.99998Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      L="round"
+    />
+    <path
+      d="M12 4C12.5304 4 13.0391 3.78929 13.4142 3.41421C13.7893 3.03914 14 2.53043 14 2C13.4696 2 12.9609 2.21071 12.5858 2.58579C12.2107 2.96086 12 3.46957 12 4Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      L="round"
+    />
+  </svg>
+);
+
+export const SpotifyIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M8 11.9729C10.5 10.4999 13.5 10.9999 15.5 12.4999M9 15.0002C10.5 14.0002 13 14.0002 14 15.5002M7 9.0002C9 8.0002 13 7.0002 17 9.5002M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      L="round"
+    />
+  </svg>
+);
+
+export const YoutubeIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    {...props}
+  >
+    <path
+      d="M17 5H7C4.79086 5 3 6.79086 3 9V15C3 17.2091 4.79086 19 7 19H17C19.2091 19 21 17.2091 21 15V9C21 6.79086 19.2091 5 17 5Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      L="round"
+    />
+    <path
+      d="M10 9L15 12L10 15V9Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      L="round"
+    />
+  </svg>
+);
