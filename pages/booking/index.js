@@ -75,20 +75,20 @@ export default function BookingPage() {
                 ease: "easeInOut",
               }}
             >
-              <div className="text-2xl font-medium">
+              <div className="text-xl md:text-2xl font-medium">
                 {information.continent}
               </div>
               <Link
                 href={`mailto:${information.email}`}
                 target="_blank"
-                className="text-3xl font-semibold underline"
+                className="text-2xl md:text-3xl font-semibold underline"
               >
                 {information.email}
               </Link>
             </motion.div>
           ))}
         </motion.div>
-        <div className="flex gap-3 items-center">
+        <div className="flex gap-3 items-center flex-wrap justify-center">
           {socialMedia.map(({ icon, link }, index) => (
             <Link key={link} href={link} target="_blank">
               <motion.div

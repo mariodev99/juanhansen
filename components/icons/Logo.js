@@ -72,14 +72,14 @@ export const AppleIcon = (props) => (
       stroke="white"
       strokeWidth="1.5"
       strokeLinecap="round"
-      L="round"
+      strokeLinejoin="round"
     />
     <path
       d="M12 4C12.5304 4 13.0391 3.78929 13.4142 3.41421C13.7893 3.03914 14 2.53043 14 2C13.4696 2 12.9609 2.21071 12.5858 2.58579C12.2107 2.96086 12 3.46957 12 4Z"
       stroke="white"
       strokeWidth="1.5"
       strokeLinecap="round"
-      L="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -98,7 +98,7 @@ export const SpotifyIcon = (props) => (
       stroke="white"
       strokeWidth="1.5"
       strokeLinecap="round"
-      L="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -117,14 +117,14 @@ export const YoutubeIcon = (props) => (
       stroke="white"
       strokeWidth="1.5"
       strokeLinecap="round"
-      L="round"
+      strokeLinejoin="round"
     />
     <path
       d="M10 9L15 12L10 15V9Z"
       stroke="white"
       strokeWidth="1.5"
       strokeLinecap="round"
-      L="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
