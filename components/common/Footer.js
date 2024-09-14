@@ -46,21 +46,35 @@ export default function Footer() {
         </Wrapper>
 
         <Wrapper>
-          <p className="font-semibold">social media</p>
+          <p className="font-semibold">listen & social media</p>
           <div className="flex gap-2 items-center">
-            <Link href={"/"} target="_blank">
+            <Link href={"https://soundcloud.com/juanhansen"} target="_blank">
               <SoundcloudIcon />
             </Link>
-            <Link href={"/"} target="_blank">
-              <YoutubeIcon />
-            </Link>
-            <Link href={"/"} target="_blank">
+            <Link
+              href={"https://open.spotify.com/artist/1ZFLYus27fzqEV3d6RBrxo"}
+              target="_blank"
+            >
               <SpotifyIcon />
             </Link>
-            <Link href={"/"} target="_blank">
+            <Link
+              href="https://www.youtube.com/channel/UCowMXbr_PSnh6-Peva5Sxfg"
+              target="_blank"
+            >
+              <YoutubeIcon />
+            </Link>
+            <Link
+              href={"https://music.apple.com/us/artist/juan-hansen/1286403774"}
+              target="_blank"
+            >
               <AppleIcon />
             </Link>
-            <Link href={"/"} target="_blank">
+            <Link
+              href={
+                "https://www.beatport.com/artist/juan-hansen/642629?srsltid=AfmBOorQvY5nh2UVVb6jCCCmz1zfee5Tusuo8zjgkXAf-gezGU7SNJcb"
+              }
+              target="_blank"
+            >
               <BeatportIcon />
             </Link>
           </div>
@@ -77,6 +91,9 @@ export default function Footer() {
           </div>
         </Wrapper>
       </div>
+      <p className="text-[#979797] mt-5">
+        © Copyright 2023. All rights reserved by Juan Hansen
+      </p>
     </motion.div>
   );
 }

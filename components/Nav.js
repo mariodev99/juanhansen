@@ -2,7 +2,14 @@ import Image from "next/image";
 import title from "../public/images/juanhansen_title.png";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { LogoIcon } from "./icons/Logo";
+import {
+  AppleIcon,
+  BeatportIcon,
+  LogoIcon,
+  SoundcloudIcon,
+  SpotifyIcon,
+  YoutubeIcon,
+} from "./icons/Logo";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import HoverLink from "./Nav/HoverLink";
@@ -60,7 +67,7 @@ export default function Nav() {
           <div className="pl-20 pr-10">
             <div className="flex justify-between overflow-hidden">
               <Link href={"/"} onClick={(e) => handleClick(e, "/")}>
-                <LogoIcon height={"40px"} width={"100px"} />
+                <LogoIcon height={"50px"} width={"140px"} />
               </Link>
               <motion.button
                 initial={{ y: 30 }}
@@ -87,6 +94,12 @@ export default function Nav() {
               >
                 <HoverLink text={"RELEASES"} />
               </Link>
+              <Link
+                href={"/booking"}
+                onClick={(e) => handleClick(e, "/booking")}
+              >
+                <HoverLink text={"BOOKING"} />
+              </Link>
             </div>
 
             <motion.div
@@ -96,73 +109,89 @@ export default function Nav() {
               animate="visible"
               exit="exit"
             >
-              <div className="mt-10 grid grid-cols-2">
-                <motion.p>follow</motion.p>
-                <motion.div>
-                  <CustomLink
-                    href={"https://www.instagram.com/juan_hansen/?hl=es"}
-                    name={"instagram"}
-                  />
-                  <CustomLink
-                    href={
-                      "https://www.youtube.com/channel/UCowMXbr_PSnh6-Peva5Sxfg"
-                    }
-                    name={"youtube"}
-                  />
-                </motion.div>
-              </div>
-
-              <div className="mt-10 grid grid-cols-2">
-                <p>listen</p>
-                <div>
-                  <CustomLink
+              <div className="mt-10 flex flex-col gap-2">
+                <motion.p className="text-lg font-semibold">follow</motion.p>
+                <div className="flex gap-2 items-center">
+                  <Link
+                    className="bg-black p-2 rounded-full"
                     href={
                       "https://open.spotify.com/artist/1ZFLYus27fzqEV3d6RBrxo"
                     }
-                    name={"spotify"}
-                  />
-                  <CustomLink
-                    href={"https://soundcloud.com/juanhansen"}
-                    name={"soundcloud"}
-                  />
-                  <CustomLink
-                    href={
-                      "https://music.apple.com/us/artist/juan-hansen/1286403774"
-                    }
-                    name={"applemusic"}
-                  />
-                  <CustomLink
-                    href={
-                      "https://www.beatport.com/artist/juan-hansen/642629?srsltid=AfmBOorQvY5nh2UVVb6jCCCmz1zfee5Tusuo8zjgkXAf-gezGU7SNJcb"
-                    }
-                    name={"beatport"}
-                  />
+                    target="_blank"
+                  >
+                    <SpotifyIcon width={26} height={26} />
+                  </Link>
+
+                  <Link
+                    className="bg-black p-2 rounded-full"
+                    href="https://www.youtube.com/channel/UCowMXbr_PSnh6-Peva5Sxfg"
+                    target="_blank"
+                  >
+                    <YoutubeIcon width={26} height={26} />
+                  </Link>
                 </div>
               </div>
 
-              <div className="mt-10 grid grid-cols-2">
-                <p>get in touch</p>
+              <div className="mt-5 flex flex-col gap-2">
+                <motion.p className="text-lg font-semibold">listen</motion.p>
+                <div className="flex gap-2 items-center">
+                  <Link
+                    className="bg-black p-2 rounded-full"
+                    href={
+                      "https://open.spotify.com/artist/1ZFLYus27fzqEV3d6RBrxo"
+                    }
+                    target="_blank"
+                  >
+                    <SpotifyIcon width={26} height={26} />
+                  </Link>
+                  <Link
+                    className="bg-black p-2 rounded-full"
+                    href={"https://soundcloud.com/juanhansen"}
+                    target="_blank"
+                  >
+                    <SoundcloudIcon width={26} height={26} />
+                  </Link>
+
+                  <Link
+                    className="bg-black p-2 rounded-full"
+                    href={
+                      "https://music.apple.com/us/artist/juan-hansen/1286403774"
+                    }
+                    target="_blank"
+                  >
+                    <AppleIcon width={26} height={26} />
+                  </Link>
+                  <Link
+                    className="bg-black p-2 rounded-full"
+                    href={
+                      "https://www.beatport.com/artist/juan-hansen/642629?srsltid=AfmBOorQvY5nh2UVVb6jCCCmz1zfee5Tusuo8zjgkXAf-gezGU7SNJcb"
+                    }
+                    target="_blank"
+                  >
+                    <BeatportIcon width={26} height={26} />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="mt-5 flex flex-col gap-2">
+                <motion.p className="text-lg font-semibold">
+                  get in touch
+                </motion.p>
                 <motion.div
-                  className="flex flex-col gap-1"
+                  className="flex flex-col gap-1 text-base"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0, transition: { duration: 0.1 } }}
                   transition={{ delay: 0.8 }}
                 >
                   <Link href={"mailto:jon@liaisonartists.com"}>
-                    <div className=" text-black bg-slate-50 px-2">
-                      <p className="inline">North & Central America</p>
-                    </div>
+                    North & Central America {">"}
                   </Link>
                   <Link href={"mailto:mcia@ban-mww.com"}>
-                    <div className=" text-black bg-slate-50 px-2">
-                      <p className="inline">South America</p>
-                    </div>
+                    South America {">"}
                   </Link>
                   <Link href={"mailto:dalila@ntrlagency.com"}>
-                    <div className=" text-black bg-slate-50 px-2">
-                      <p className="inline">Rest of the World</p>
-                    </div>
+                    Rest of the World {">"}
                   </Link>
                 </motion.div>
               </div>

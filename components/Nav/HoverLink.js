@@ -8,7 +8,7 @@ const HoverLink = ({ text }) => {
 
   const transitionAnimation = (index) => ({
     ease: "easeInOut",
-    duration: 0.3,
+    duration: 0.4,
     delay: index * 0.1,
   });
 
@@ -25,14 +25,14 @@ const HoverLink = ({ text }) => {
     initial: { rotateX: -90, y: -20 },
     hover: {
       rotateX: hoverLinkAnimation ? 0 : -90,
-      y: hoverLinkAnimation ? -35 : -20,
+      y: hoverLinkAnimation ? -35 : -22,
       transition: transitionAnimation(index),
     },
   });
 
   return (
     <motion.div
-      className="inline-block mb-1 overflow-hidden text-3xl font-bold h-9"
+      className="inline-block overflow-hidden text-3xl font-black h-7"
       onHoverStart={() => setHoverLinkAnimation(true)}
       onHoverEnd={() => setHoverLinkAnimation(false)}
     >
