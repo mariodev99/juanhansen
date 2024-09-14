@@ -35,7 +35,7 @@ export default function Layout({ children }) {
     <LocomotiveScrollProvider
       options={{
         smooth: true,
-        smoothMobile: true,
+        smoothMobile: false,
         lerp: 0.05,
         inertia: 0.4,
       }}

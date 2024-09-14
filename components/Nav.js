@@ -42,17 +42,6 @@ export default function Nav() {
     isOpen(false);
   };
 
-  const CustomLink = ({ href, name }) => (
-    <Link href={href} target="_blank">
-      <div className="flex group gap-1 transition-all duration-150">
-        <p>{name}</p>
-        <div className="opacity-0 group-hover:opacity-100 duration-150">
-          {">"}
-        </div>
-      </div>
-    </Link>
-  );
-
   const Menu = () => (
     <>
       {/* menu desplegable*/}
