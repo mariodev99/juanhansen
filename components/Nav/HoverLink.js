@@ -32,7 +32,7 @@ const HoverLink = ({ text }) => {
 
   return (
     <motion.div
-      className="inline-block overflow-hidden text-3xl font-black h-7"
+      className="inline-block overflow-hidden text-3xl font-black h-8"
       onHoverStart={() => setHoverLinkAnimation(true)}
       onHoverEnd={() => setHoverLinkAnimation(false)}
     >
