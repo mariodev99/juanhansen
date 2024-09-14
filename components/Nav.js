@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   AppleIcon,
   BeatportIcon,
+  InstagramIcon,
   LogoIcon,
   SoundcloudIcon,
   SpotifyIcon,
@@ -113,17 +114,17 @@ export default function Nav() {
                 <motion.p className="text-lg font-semibold">follow</motion.p>
                 <div className="flex gap-2 items-center">
                   <Link
-                    className="bg-black p-2 rounded-full"
+                    className="bg-black p-2 rounded-full shadow-md"
                     href={
                       "https://open.spotify.com/artist/1ZFLYus27fzqEV3d6RBrxo"
                     }
                     target="_blank"
                   >
-                    <SpotifyIcon width={26} height={26} />
+                    <InstagramIcon width={26} height={26} />
                   </Link>
 
                   <Link
-                    className="bg-black p-2 rounded-full"
+                    className="bg-black p-2 rounded-full shadow-md"
                     href="https://www.youtube.com/channel/UCowMXbr_PSnh6-Peva5Sxfg"
                     target="_blank"
                   >
@@ -136,7 +137,7 @@ export default function Nav() {
                 <motion.p className="text-lg font-semibold">listen</motion.p>
                 <div className="flex gap-2 items-center">
                   <Link
-                    className="bg-black p-2 rounded-full"
+                    className="bg-black p-2 rounded-full shadow-md"
                     href={
                       "https://open.spotify.com/artist/1ZFLYus27fzqEV3d6RBrxo"
                     }
@@ -145,7 +146,7 @@ export default function Nav() {
                     <SpotifyIcon width={26} height={26} />
                   </Link>
                   <Link
-                    className="bg-black p-2 rounded-full"
+                    className="bg-black p-2 rounded-full shadow-md"
                     href={"https://soundcloud.com/juanhansen"}
                     target="_blank"
                   >
@@ -153,7 +154,7 @@ export default function Nav() {
                   </Link>
 
                   <Link
-                    className="bg-black p-2 rounded-full"
+                    className="bg-black p-2 rounded-full shadow-md"
                     href={
                       "https://music.apple.com/us/artist/juan-hansen/1286403774"
                     }
@@ -162,7 +163,7 @@ export default function Nav() {
                     <AppleIcon width={26} height={26} />
                   </Link>
                   <Link
-                    className="bg-black p-2 rounded-full"
+                    className="bg-black p-2 rounded-full shadow-md"
                     href={
                       "https://www.beatport.com/artist/juan-hansen/642629?srsltid=AfmBOorQvY5nh2UVVb6jCCCmz1zfee5Tusuo8zjgkXAf-gezGU7SNJcb"
                     }

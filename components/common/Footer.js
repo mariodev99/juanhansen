@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   AppleIcon,
   BeatportIcon,
+  InstagramIcon,
   LogoIcon,
   SoundcloudIcon,
   SpotifyIcon,
@@ -48,6 +49,12 @@ export default function Footer() {
         <Wrapper>
           <p className="font-semibold">listen & social media</p>
           <div className="flex gap-2 items-center">
+            <Link
+              href={"https://www.instagram.com/juan_hansen"}
+              target="_blank"
+            >
+              <InstagramIcon />
+            </Link>
             <Link href={"https://soundcloud.com/juanhansen"} target="_blank">
               <SoundcloudIcon />
             </Link>
