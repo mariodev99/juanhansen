@@ -104,14 +104,16 @@ export default function Nav() {
             </div>
 
             <motion.div
-              className="mt-10 pr-10 md:pr-28 uppercase font-medium text-xs"
+              className="mt-6 md:mt-10 pr-10 md:pr-28 uppercase font-medium text-xs"
               variants={menuItemVariant}
               initial="hidden"
               animate="visible"
               exit="exit"
             >
-              <div className="mt-10 flex flex-col gap-2">
-                <motion.p className="text-lg font-semibold">follow</motion.p>
+              <div className="mt-5 md:mt-8 flex flex-col gap-2">
+                <motion.p className="text-base md:text-lg font-semibold">
+                  follow
+                </motion.p>
                 <div className="flex gap-2 items-center">
                   <Link
                     className="bg-black p-2 rounded-full shadow-md"
@@ -134,7 +136,9 @@ export default function Nav() {
               </div>
 
               <div className="mt-5 flex flex-col gap-2">
-                <motion.p className="text-lg font-semibold">listen</motion.p>
+                <motion.p className="text-base md:text-lg font-semibold">
+                  listen
+                </motion.p>
                 <div className="flex gap-2 items-center">
                   <Link
                     className="bg-black p-2 rounded-full shadow-md"
@@ -175,11 +179,11 @@ export default function Nav() {
               </div>
 
               <div className="mt-5 flex flex-col gap-2">
-                <motion.p className="text-lg font-semibold">
+                <motion.p className="text-base md:text-lg font-semibold">
                   get in touch
                 </motion.p>
                 <motion.div
-                  className="flex flex-col gap-1 text-base"
+                  className="flex flex-col gap-1 text-sm md:text-base"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0, transition: { duration: 0.1 } }}
@@ -196,10 +200,6 @@ export default function Nav() {
                   </Link>
                 </motion.div>
               </div>
-
-              {/* <div className="mt-10">
-                <p>buenos aires, argentina</p>
-              </div> */}
             </motion.div>
           </div>
         </motion.div>
