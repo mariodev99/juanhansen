@@ -29,7 +29,7 @@ export default function ReleasesPage() {
       */}
 
         <div
-          class="sticky-container"
+          className="sticky-container"
           data-scroll
           data-scroll-sticky
           data-scroll-target="#scroll-content"

@@ -6,10 +6,12 @@ import beirut from "@/public/images/beirut.jpg";
 import Image from "next/image";
 import { useLoad } from "../context/LoadContext";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export const Releases = ({ setCurrentRelease, setHoverAnimation }) => {
   // Valor utilizado para que haya un delay despues de la animacion "loading"
   const { isLoadFinish } = useLoad();
+  const router = useRouter();
 
   //   utilizo imageClassname y containerClassname para manejar la posicion individual a mi gusto dentro de la grilla
   const releases = [
@@ -17,6 +19,7 @@ export const Releases = ({ setCurrentRelease, setHoverAnimation }) => {
       name: "falling down",
       description:
         "Latest EP on Watergate Records alongside 8Kays. With remixes from Colyn & Chris Avantgarde.",
+      url: "https://www.youtube.com/watch?v=YDUyKWMZwfU&ab_channel=WatergateClub%26Records",
       imageSrc: fallingdownImage,
       imageClassname: "relative h-[370px] w-full md:w-[450px] overflow-hidden",
       containerClassname: "justify-start pl-0 md:pl-20",
@@ -24,6 +27,7 @@ export const Releases = ({ setCurrentRelease, setHoverAnimation }) => {
     {
       name: "Burning Out",
       description: "New single in collaboration with Innellea is out now.",
+      url: "https://www.youtube.com/watch?v=53cnFnxghGI&ab_channel=Innellea",
       imageSrc: innellea,
       imageClassname:
         "relative h-[370px] md:h-[550px] w-full md:w-[350px] overflow-hidden",
@@ -32,6 +36,7 @@ export const Releases = ({ setCurrentRelease, setHoverAnimation }) => {
     {
       name: "beirut set ",
       description: "Full Live set recording at AHM club in Beirut, Lebanon",
+      url: "https://www.youtube.com/watch?v=o8My0goEAWY&t=1309s&ab_channel=LATEKNIGHTS",
       imageSrc: beirut,
       imageClassname: "relative h-[370px] md:h-[600px] w-96 overflow-hidden",
       containerClassname:
@@ -42,6 +47,10 @@ export const Releases = ({ setCurrentRelease, setHoverAnimation }) => {
   const handleHover = (release) => {
     setCurrentRelease(release);
     setHoverAnimation(true);
+  };
+
+  const handleClick = (href) => {
+    router.push(href);
   };
 
   const releaseVariants = {
@@ -70,6 +79,7 @@ export const Releases = ({ setCurrentRelease, setHoverAnimation }) => {
             animate={"visible"}
             onHoverStart={() => handleHover(release)}
             onHoverEnd={() => setHoverAnimation(false)}
+            onClick={() => handleClick(release.url)}
           >
             <Image
               className="grayscale-0 md:grayscale hover:grayscale-0 hover:scale-105 duration-500"

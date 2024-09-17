@@ -64,8 +64,6 @@ export default function Layout({ children }) {
         <AnimatePresence>{!isLoadFinish && <LoadingBar />}</AnimatePresence>
         <Nav></Nav>
         {children}
-
-        {/* <Footer /> */}
       </div>
     </LocomotiveScrollProvider>
   );
