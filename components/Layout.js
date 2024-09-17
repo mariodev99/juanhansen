@@ -7,6 +7,9 @@ import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRef } from "react";
 import { useLoad } from "./context/LoadContext";
 import { useRouter } from "next/router";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Layout({ children }) {
   const LoadingBar = () => (
@@ -46,7 +49,7 @@ export default function Layout({ children }) {
         scroll.scrollTo(0, { duration: 0, disableLerp: true })
       }
     >
-      <div data-scroll-container ref={containerRef}>
+      <div data-scroll-container ref={containerRef} className={inter.className}>
         <motion.div
           className="w-screen h-screen bg-[#131313] absolute z-40"
           animate={{
